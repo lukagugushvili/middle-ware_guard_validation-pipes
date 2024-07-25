@@ -7,7 +7,6 @@ export class UsersController {
 
   @Get()
   getUsers() {
-    console.log('is /users handler');
     return {};
   }
 }
