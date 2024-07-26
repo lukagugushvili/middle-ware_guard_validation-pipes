@@ -1,0 +1,11 @@
+1.expense-manager აპლიკაციაში დავამატოთ middleware რომელიც ყველა რექუესთზე დალოგავ user-agent_ს.
+2.შექმნის და განახლების როუტერბს დავამატოთ ვალიდაცია validation-pipe_ის გამოყენებით.
+3.დავამატოთ გლობალური გარდი რომელიც რაღაც ლოგიკით ან გაატარებს რექუესთს ან დაბლოკავს. (ლოგიკა თქვენით მოიფიქრეთ)
+4.update, delete, create როუტებს დავამატოთ გარდი რომელიც req.headers_ში შეამოწმებს თუ არსებოს ფროფერთი is-admin და აქვს მნიშვნელობა true, წინააღმდეგ შემთხვევაში არ გაატაროს რექუესთი.
+5.get როუტს დავუმატოთ გარდი რომელიც შეამოწმებს req.headers_ში თუ არსებოს ფროფერთი api-key და აქვს წინაწარ განსაზღვრული მნიშვნელობა, წინააღმდეგ შემთხვევაში არ გაატაროს რექუესთი.
+
+1.In the expense-manager application, add middleware that will log user-agent_ on all requests.
+2.Add validation to the creation and update router using validation-pipe_.
+3.Let's add a global guard, which with some logic will either handle the request or block it. (think of the logic yourself)
+4.Let's add a guard to the update, delete, create routes, which will check if the property is-admin exists in req.headers and has the value true, otherwise it will not process the request.
+5.Let's add a guard to the get route, which will check if the api-key property exists in req.headers and has a predefined value, otherwise, don't process the request.
