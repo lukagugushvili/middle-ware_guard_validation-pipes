@@ -56,4 +56,20 @@ export class UsersService {
 
     return this.users[findIndex];
   }
+
+  deleteUser(id: number) {
+    const deleteUser = this.users.filter((user) => user.id !== id);
+    const showDeletedUser = this.users.find((user) => user.id === id);
+
+    if (!showDeletedUser) {
+      throw new HttpException(
+        `User with id: ${id} does not exist`,
+        HttpStatus.NOT_FOUND,
+      );
+    }
+
+    this.users = deleteUser;
+
+    return showDeletedUser;
+  }
 }
